@@ -1,4 +1,4 @@
-// 前缀矩阵和
+// 前缀和
 var NumArray = function (nums) {
     this.temp = nums
     this.ret = []
