@@ -10,7 +10,7 @@
  * @return {ListNode}
  */
  var reverseList = function(head) {
-    if(!head || !head.next){
+    if(!head || !head.next){ // 最内层递归会因head.next === null而返回head（反转链表后的头结点）
         return head
     }
     const last = reverseList(head.next)
