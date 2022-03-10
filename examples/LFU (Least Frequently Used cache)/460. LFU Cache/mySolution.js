@@ -47,6 +47,7 @@ LFUCache.prototype.put = function(key, value) {
             // this.freqToKeys.get(this.minFreq).keys/values().next() -> Obejct{ value:xxx, done:false }: the first object of the SetIterator ( Set.keys() equals to Set.values() )
             // this.freqToKeys.get(this.minFreq).entries().next() -> Obejct{ value:Array(2)[xxx,xxx], done:false }: the first object of the SetIterator
             // Set Iterator遍历顺序与添加顺序相同，相当于Java中的LinkedHashSet
+            // Set、Map ==> Array: Array.from(Set/Map) or [...Set/Map]
             const deletedKey = this.freqToKeys.get(this.minFreq).keys().next().value
             this.keyToVal.delete(deletedKey)
             this.keyToFreq.delete(deletedKey)
