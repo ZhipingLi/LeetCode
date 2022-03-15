@@ -28,7 +28,7 @@ RandomizedSet.prototype.remove = function(val) {
     const temp = this.arr[this.arr.length-1]
     this.arr[index] = temp
     this.arr.pop()
-    this.map.set(temp,index) // 先delete()再set()()在map中只有一个数时会出错
+    this.map.set(temp,index) // 先delete()再set()在map中只有一个数时会出错
     this.map.delete(val)
     return true
 };
