@@ -11,7 +11,6 @@
  * @return {TreeNode[]}
  */
  var findDuplicateSubtrees = function(root) {
-    //map和res放在函数外会成为全局变量，导致每一次运行findDuplicateSubtrees(root)时，map和res不会被重新创建
     const map = new Map()
     const res = []
     postTranverse(root)

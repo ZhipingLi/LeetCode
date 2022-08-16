@@ -23,3 +23,36 @@
     root.right = right
     return root
 };
+
+// 使用辅助函数：
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {number[]} nums
+ * @return {TreeNode}
+ */
+ var constructMaximumBinaryTree = function(nums) {
+    return build(0, nums.length - 1, nums)
+  };
+  
+  function build(lo, hi, nums){
+    if(lo > hi) return null
+    let max = Number.MIN_SAFE_INTEGER
+    let index = -1
+    for(let i = lo; i <= hi; i++){
+      if(nums[i] > max){
+        max = nums[i]
+        index = i
+      }
+    }
+    const left = build(lo, index - 1, nums)
+    const right = build(index + 1, hi, nums)
+    return new TreeNode(max, left, right)
+  }

@@ -4,7 +4,7 @@
  * @return {number[]}
  */
  var searchRange = function(nums, target) {
-    return [nums.indexOf(target), nums.lastIndexOf(target)];
+    // return [nums.indexOf(target), nums.lastIndexOf(target)];
     // binary search
     let start = 0;
     let end = nums.length - 1;

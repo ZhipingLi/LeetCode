@@ -1,6 +1,6 @@
 /**
  * 1. 通过Map对象映射实现O(1)的数组插入、查找操作，通过将要删除元素与数组尾元素交换后再pop()实现O(1)的数组删除操作。
- * 2. 也可使用Map对象+链表实现
+ * 2. 通过使用数组实现getRandom()O(1)时间复杂度等概率返回随机元素。如果使用Map对象+链表(LinkedHashMap)实现，将不能实现getRandom的O(1)复杂度。
  */
 var RandomizedSet = function() {
     this.map = new Map()

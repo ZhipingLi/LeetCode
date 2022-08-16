@@ -1,3 +1,47 @@
+var MyQueue = function() {
+    this.arr1 = []
+    this.arr2 = []
+  };
+  
+  /** 
+   * @param {number} x
+   * @return {void}
+   */
+  MyQueue.prototype.push = function(x) {
+    this.arr2.push(x)
+  };
+  
+  /**
+   * @return {number}
+   */
+  MyQueue.prototype.pop = function() {
+    this.peek()
+    return this.arr1.pop()
+  };
+  
+  /**
+   * @return {number}
+   */
+  MyQueue.prototype.peek = function() {
+    const arr = []
+    while(this.arr2.length){
+      arr.push(this.arr2.pop())
+    }
+    this.arr1.length ? this.arr1.unshift(...arr) : this.arr1 = arr //注意此处分两种情况
+    return this.arr1[this.arr1.length - 1]
+  };
+  
+  /**
+   * @return {boolean}
+   */
+  MyQueue.prototype.empty = function() {
+    return !this.arr1.length && !this.arr2.length
+  };
+
+
+
+
+
 /**
  * Initialize your data structure here.
  */

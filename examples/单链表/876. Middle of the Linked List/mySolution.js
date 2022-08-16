@@ -9,6 +9,15 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+ var middleNode = function(head) { //如果中点有两个，该解法返回靠后的节点
+    let left = head, right = head
+    while(right && right.next){
+      left = left.next
+      right = right.next.next
+    }
+    return left
+  };
+
  var middleNode = function(head) {
     let dummy = new ListNode(-1,head)
     let slow = dummy, fast = dummy

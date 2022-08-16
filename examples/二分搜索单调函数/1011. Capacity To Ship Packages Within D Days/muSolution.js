@@ -19,7 +19,7 @@
     }
     let left=Math.max(...weights), right = weights.reduce((x,y) => x+y)
     while(left<=right){
-        const mid = left + (Math.floor(right-left>>2))
+        const mid = left + (Math.floor(right-left>>1))
         if(f(mid)>days){
             left = mid + 1
         }else{

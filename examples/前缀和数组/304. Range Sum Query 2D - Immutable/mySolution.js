@@ -13,6 +13,7 @@
             this.pre[i].push(0)
         }
     }
+    // this.pre = Array.from({length: length+1}, () => []).map(() => new Array(width+1).fill(0))
     for (let i=1; i <= length; i++){
         for (let j=1; j <= width; j++){
             this.pre[i][j]= this.pre[i-1][j] + this.pre[i][j-1] - this.pre[i-1][j-1] + matrix[i-1][j-1]

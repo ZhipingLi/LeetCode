@@ -7,7 +7,7 @@
     let res = [], arr = []
     for(const i in nums){ 
         const num = nums[i]
-        while(arr.length && arr[arr.length-1] < num){
+        while(arr.length && arr[arr.length-1] < num){ //此处不能取等号
             arr.pop()
         }
         arr.push(num)

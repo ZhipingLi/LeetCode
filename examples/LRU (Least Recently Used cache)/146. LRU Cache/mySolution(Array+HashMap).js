@@ -4,7 +4,7 @@
  var LRUCache = function(capacity) {
     this.cap = capacity
     this.map = new Map()
-    this.cache = []
+    this.cache = [] //使用数组将产生O(n)复杂度，不推荐
 };
 
 /** 
