@@ -28,7 +28,7 @@
     if(count > max) max = count
     return depth
   }
-  traverse(root, max)
+  traverse(root)
   return max
 };
 
