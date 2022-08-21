@@ -42,6 +42,9 @@ var deserialize = function(data) {
     if(arr[0] === '#') return null
     const root = new TreeNode(arr[0])
     const queue = [root]
+    // 或者使用while循环
+    // let i = 1
+    // while(queue.length){
     for(let i = 1; i <= arr.length - 1; ){
       const parent = queue.shift()
 

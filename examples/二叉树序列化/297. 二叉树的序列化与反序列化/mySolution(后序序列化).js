@@ -37,6 +37,7 @@ function buildDeserialization(arr){
   if(!arr.length) return null
   const rootVal = arr.pop()
   if(rootVal === '#') return null
+  // 注意：右子树在前, 左子树在后.
   const right = buildDeserialization(arr)
   const left = buildDeserialization(arr)
   const root = new TreeNode(rootVal)
