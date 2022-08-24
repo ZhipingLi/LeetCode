@@ -8,7 +8,7 @@ var numTrees = function(n) {
   const memo = Array.from({length: n + 1}, () => [])
   // 函数定义：闭区间[lo, hi]的数字能组成count(lo, hi)种BST
   function count(lo, hi){
-    // 注意：base case不能返回0，之后会用于相乘
+    // 注意：base case意味着是空节点，但也是一种情况，故不能返回0，之后会用于相乘
     if(lo > hi) return 1
     if(memo[lo][hi]) return memo[lo][hi]
     let res = 0
