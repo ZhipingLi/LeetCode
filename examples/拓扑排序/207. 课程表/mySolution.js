@@ -24,7 +24,7 @@
 
   function traverse(graph, u){
     // visited：从始至终到访过的节点
-    // path：本次路径到访过的节点
+    // onPath：本次路径到访过的节点
 
     // 出现环
     if(onPath[u]) hasCycle = true
