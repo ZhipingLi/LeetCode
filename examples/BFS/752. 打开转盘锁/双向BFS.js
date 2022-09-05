@@ -18,12 +18,12 @@ var openLock = function(deadends, target) {
   let set1 = new Set(['0000']), set2 = new Set([target]) // set2为下一步要扩散的一层
   const visited = [], deadMap = new Set(deadends)
   while(set1.size && set2.size){ // 如果其中一个set走不动了，说明起点和终点不连通
-    // Set遍历具有时序性
     const temp = new Set()
+    // Set遍历具有时序性
     for(const cur of set1){
       /* 判断是否到达终点 */
       if(set2.has(cur)) return depth
-      visited[cur] = true // 注意：双向BFS中，visited不能放在for内
+      visited[cur] = true // 注意：双向BFS中，visited不能放在for内；若使用两个visited则可以置于for内。
       for(let i = 0; i <= 3; i++){
         const pulsOneStr = pulsOne(cur, i)
         if(deadMap.has(pulsOneStr) || visited[pulsOneStr]) continue
