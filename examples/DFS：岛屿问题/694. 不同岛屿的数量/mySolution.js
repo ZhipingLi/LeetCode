@@ -7,8 +7,7 @@
   const m = grid.length, n = grid[0].length
   for(let i = 0; i <= m - 1; i++){
     for(let j = 0; j <= n - 1; j++){
-      const str = dfs(i, j)
-      set.add(str)
+      if(grid[i][j] === 1) set.add(dfs(i, j))
     }
   }
   return set.size
