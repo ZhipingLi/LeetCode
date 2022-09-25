@@ -7,7 +7,8 @@
   const memo = new Map()
   return dp(m - 1, n - 1)
   
-  // dp函数定义：dp(i, j)返回从(0, 0)到(i, j)的最小路径和
+  // dp函数定义：dp(i, j)返回从grid[0][0]到grid[i][j]的最小路径和
+  // 注意：i、j的含义分别为第i + 1行、第j + 1列，并非坐标值
   function dp(i, j){
     // base case
     if(i < 0 || j < 0) return Infinity
