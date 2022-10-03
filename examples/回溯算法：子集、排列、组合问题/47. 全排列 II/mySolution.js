@@ -11,7 +11,7 @@
  */
  var permuteUnique = function(nums) {
   const res = [], track = [], used = []
-  nums.sort()
+  nums.sort((a, b) => a - b)
   backTrack()
   return res
 

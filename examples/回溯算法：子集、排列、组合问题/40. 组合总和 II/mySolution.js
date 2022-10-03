@@ -5,7 +5,7 @@
  */
  var combinationSum2 = function(candidates, target) {
   const res = [], track = []
-  candidates.sort()
+  candidates.sort((a, b) => a - b)
   let trackSum = 0
   backTrack(0)
   return res

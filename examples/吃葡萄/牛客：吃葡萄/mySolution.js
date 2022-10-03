@@ -11,6 +11,7 @@
  * 2. typeof 1234n -> bigint    typeof Object(1n) -> object    typeof symbol值 -> symbol    typeof Object(symbol值) -> object
  * 3. BigInt不支持单目(+)运算符
  * 4. BigInt与Number非严格相等的，但是是宽松相等的。
+ * 5. BigInt与Number可以进行比较（>, >=, <, <=）。
  */
 
 const readline = require('readline');
@@ -31,8 +32,12 @@ rl.on('line', function (line) {
 });
 
 function mySolution(nums){
-  // 此处不能使用nums.sort()，因为Array.prototype.sort((a, b) => a - b)中a - b返回的是BigInt类型数据。
+  // 此处不能使用nums.sort((a, b) => a - b)，因为a - b返回的是BigInt类型数据（TypeError: Cannot convert a BigInt value to a number）。
   const [a, b, c] = nums.sort((a, b) => a < b ? -1 : 1)
+  /**
+   * 注意：Array.prototype.sort(compareFn?)省略compareFn时，元素按照转换为的字符串的各个字符的 Unicode 位点进行排序。
+   * 此时会出现[11, 1, 2].sort() -> [1, 11, 2]
+   */
   const sum = a + b + c
   // 可以构成三角形
   if(a + b > c) return (sum + 2n) / 3n

@@ -5,7 +5,7 @@
  var subsetsWithDup = function(nums) {
   const res = [], track = []
   // 先排序，让相同的元素靠在一起
-  nums.sort()
+  nums.sort((a, b) => a - b)
   backTrack(0)
   return res
 
