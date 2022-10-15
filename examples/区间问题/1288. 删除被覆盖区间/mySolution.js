@@ -19,9 +19,9 @@
     // 情况一，找到覆盖区间
     if(interval_right <= right) res--
     // 情况二，两区间相交，合并成一个大区间
-    if(interval_left < right && interval_right > right) right = interval_right
+    if(interval_left <= right && interval_right > right) right = interval_right
     // 情况三，完全不相交，更新起点和终点
-    if(interval_left >= right){
+    if(interval_left > right){
       left = interval_left
       right = interval_right
     }
